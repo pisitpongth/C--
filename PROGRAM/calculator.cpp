@@ -35,9 +35,13 @@ int main() {
            << result << "\n";
       break;
     case '/':
-      result = firstNumber / secondNumber;
-      cout << "The Result of " << firstNumber << " / " << secondNumber << " = "
-           << result << "\n";
+      if (secondNumber == 0 && op == '/') {
+        cout << "You can not divide by zero!" << "\n";
+      } else {
+        result = firstNumber / secondNumber;
+        cout << "The Result of " << firstNumber << " / " << secondNumber
+             << " = " << result << "\n";
+      }
       break;
     default:
       cout << "That wasn't a valid operator" << "\n";
