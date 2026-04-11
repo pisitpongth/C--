@@ -1,56 +1,44 @@
 #include <iostream>
+using namespace std;
 
 int main() {
   char op;
-  double num1, num2, result;
+  double num1, num2;
 
-  std::cout << "\n" << "********** CALCULATOR **********" << "\n";
+  cout << "\n********** CALCULATOR **********\n";
 
-  std::cout << "Enter first number: ";
-  std::cin >> num1;
+  cout << "Enter first number: ";
+  cin >> num1;
 
-  std::cout << "Enter second number: ";
-  std::cin >> num2;
+  cout << "Enter second number: ";
+  cin >> num2;
 
-  std::cout << "Enter an operator: ";
-  std::cin >> op;
+  cout << "Enter an operator: ";
+  cin >> op;
 
-  switch (op) {
-    case '+':
-      result = num1 + num2;
-      std::cout << "--------------------------------" << "\n";
-      std::cout << "The Result of " << num1 << " + " << num2 << " = " << result
-                << "\n";
-      break;
-    case '-':
-      result = num1 - num2;
-      std::cout << "--------------------------------" << "\n";
-      std::cout << "The Result of " << num1 << " - " << num2 << " = " << result
-                << "\n";
-      break;
-    case 'x':
-      result = num1 * num2;
-      std::cout << "--------------------------------" << "\n";
-      std::cout << "The Result of " << num1 << " x " << num2 << " = " << result
-                << "\n";
-      break;
-    case '/':
-      if (num2 == 0) {
-        std::cout << "--------------------------------" << "\n";
-        std::cout << "Error: Cannot divide by zero!" << "\n";
-      } else {
-        result = num1 / num2;
-        std::cout << "--------------------------------" << "\n";
-        std::cout << "The Result of " << num1 << " / " << num2 << " = "
-                  << result << "\n";
-      }
-      break;
-    default:
-      std::cout << "--------------------------------" << "\n";
-      std::cout << "That wasn't a valid operator" << "\n";
-      break;
+  cout << "--------------------------------\n";
+
+  if (op == '+') {
+    cout << "Result: " << num1 << " " << op << " " << num2 << " = "
+         << num1 + num2;
+  } else if (op == '-') {
+    cout << "Result: " << num1 << " " << op << " " << num2 << " = "
+         << num1 - num2;
+  } else if (op == '*' || op == 'x') {
+    cout << "Result: " << num1 << " " << op << " " << num2 << " = "
+         << num1 * num2;
+  } else if (op == '/') {
+    if (num2 == 0) {
+      cout << "Error: Cannot divide by zero!";
+    } else {
+      cout << "Result: " << num1 << " " << op << " " << num2 << " = "
+           << num1 / num2;
+    }
+  } else {
+    cout << "That wasn't a valid operator";
   }
-  std::cout << "********************************" << "\n";
+
+  cout << "\n********************************\n";
 
   return 0;
 }
